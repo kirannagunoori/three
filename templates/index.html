@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Feedback System</title>
+</head><br>
+<body  background="{% static 'images/class.JPG' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+ {% include 'title.html' %}
+<br>
+{% include 'menu.html' %}
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<table align="center">
+    <tr>
+        <th>
+            <center><font size="7" color="red" face="Arial Black">
+                Welcome  To  Online Feedback System
+            </font></center>
+        </th>
+    </tr>
+</table>
+<br><br><br><br>
+{#{% include 'gd_home/footer.html' %}#}
+</body>
+</html>

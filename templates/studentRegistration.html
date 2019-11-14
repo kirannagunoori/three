@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/feedback_background2.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'title.html' %}
+{% include 'menu.html' %}
+<br>
+<br><br>
+<table align="center">
+    <tr>
+        <th>
+            <form action="{% url 'saveStudent' %}" method="post">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th><font size="4" color="red" face="Arial">Id_number :</font></th>
+        <th><input type="number" required name="id" placeholder="Your-Id"></th>
+    </tr>
+    <tr>
+        <th><font size="4" color="red" face="Arial">Name :</font></th>
+        <th><input type="text" required name="name" placeholder="Name"></th>
+    </tr>
+    <tr>
+        <th><font size="4" color="red" face="Arial">Batch-year :</font></th>
+        <th><input type="text" required name="year" placeholder="Batch-year"></th>
+    </tr>
+     <tr>
+        <th><font size="4" color="red" face="Arial">Branch :</font></th>
+        <th><input type="branch" required name="branch" placeholder="MCA or MBA"></th>
+    </tr>
+
+    <tr>
+        <th><font size="4" color="red" face="Arial">Email_Id :</font></th>
+        <th><input type="email" required name="email" placeholder="Email"></th>
+    </tr>
+    <tr>
+        <th><font size="4" color="red" face="Arial">Username :</font></th>
+        <th><input type="text" required name="username" placeholder="username"></th>
+    </tr>
+    <tr>
+        <th><font size="4" color="red" face="Arial">Password :</font></th>
+        <th><input type="password" required name="password" placeholder="Password"></th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <center><button type="submit" class="btn btn-success">Register</button></center>
+        </th>
+    </tr>
+</table>
+
+</form>
+        </th>
+        <th width="50"></th>
+        <th>
+            <table align="center">
+                <tr>
+                    <th>
+                        <img src="{% static 'images/register_image.jpg' %}">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        {% for x in messages %}
+                            <h3 style="color: aqua">{{ x }}</h3>
+                        {% endfor %}
+                    </th>
+                </tr>
+
+            </table>
+
+        </th>
+    </tr>
+</table>
+</body>
+</html>

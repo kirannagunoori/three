@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head><br>
+<body  background="{% static 'images/about.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'title.html' %}
+{% include 'menu.html' %}
+<br><br><br><br>
+<br><br>
+<table align="center" >
+    <tr>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+    </tr>
+    <tr>
+        <th width="100"></th>
+        <th width="400"></th>
+        <th width="450">
+            <font size="4" color="red" face="">
+                Valuing and asking for feedback has recognised benefits for both staff and students. Getting  the feedback from the students will help an organization or faculty to provide better  services to the users or students.Collecting feedback from the users is very important thing for any organization. Until now  , feedback collection process is conducted manually, using printed forms.
+                This project is to develop an online feedback collection system for collecting feedback about the faculty , from the students.
+
+            </font>
+        </th>
+    </tr>
+</table>
+<br><br><br><br><br><br>
+{#{% include 'gd_home/footer.html' %}#}
+
+</body>
+</html>

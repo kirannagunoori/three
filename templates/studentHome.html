@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Student Panel</title>
+</head>
+<body  background="{% static 'images/plane.jpg' %}">
+<center><h1 style="color: aqua">Welcome to Student panel</h1></center>
+
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+                 {% for x in data1 %}
+
+                     <h1 align="left" style="color:orange">
+                         ID NUMBER: {{ x.Id_Number }}<br>
+
+                         NAME: {{ x.Student_Name }}
+                     </h1>
+         {% endfor %}
+
+<table align="center" border="2">
+    <form action="{% url 'saveFeedback' %}" method="post">
+        {% csrf_token %}
+        <tr><th colspan="4"><h1>Give Feedback Here</h1></th></tr>
+               <tr>
+                   <th>
+                       <h1><font color="#cd853f" >N.SUNDARAM </font></h1>
+                   </th>
+            <th>
+                <h1 style="color: aquamarine"><input type="radio" name="feedback" value="Excellent" checked>Excellent</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback" value="Good">Good</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback" value="Need to improve">Need to improve</h1>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <h1><font color="#cd853f" >REJINA </font></h1>
+                   </th>
+            <th>
+                <h1 style="color: aquamarine"><input type="radio" name="feedback1" value="Excellent" checked>Excellent</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback1" value="Good">Good</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback1" value="Need to improve">Need to improve</h1>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <h1><font color="#cd853f" >KIRANMAI </font></h1>
+            </th>
+            <th>
+                <h1 style="color: aquamarine"><input type="radio" name="feedback2" value="Excellent" checked>Excellent</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback2" value="Good">Good</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback2" value="Need to improve">Need to improve</h1>
+            </th>
+        </tr>
+               <tr>
+                    <th>
+                <h1><font color="#cd853f" >SHILPA </font></h1>
+            </th>
+            <th>
+                <h1 style="color: aquamarine"><input type="radio" name="feedback3" value="Excellent" checked>Excellent</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback3" value="Good">Good</h1>
+            </th>
+            <th>
+      <h1 style="color: aquamarine"> <input type="radio" name="feedback3" value="Need to improve">Need to improve</h1>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="4">
+
+<textarea rows="2" cols="80" name="feed-text" >
+    give total feedback review about your college
+</textarea>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2"><button type="submit" style="color:green">Send Feedback</button> </th>
+             <th colspan=""><button type="reset" style="color: green">reset</button> </th>
+
+            <th>
+                <h3><a href="{% url 'logout' %} "> LogOut</a></h3>
+            </th>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

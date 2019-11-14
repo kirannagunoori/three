@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body  background="{% static 'images/feedback_background4.jpg'  %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'title.html' %}
+{% include 'menu.html' %}
+<br>
+<br><br>
+<table align="center">
+    <tr>
+        <th>
+<table align="center">
+    <form action="{% url 'getRegister' %}" method="get">
+    <tr>
+        <th>
+           TYPE <select name="usertype">
+            <option>Faculty</option>
+            <option>Student</option>
+        </select>
+        </th></tr><br>
+        <tr>
+            <th><button type="submit">Get Your Registration page</button> </th>
+        </tr>
+    </form>
+</table>
+
+</form>
+        </th>
+        <th width="50"></th>
+        <th>
+            <table align="center">
+                <tr>
+                    <th>
+                        <img src="{% static 'images/register_image.jpg' %}">
+                    </th>
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+
+        </th>
+    </tr>
+</table>
+
+{#{% include 'gd_home/footer.html' %}#}
+
+</body>
+</html>

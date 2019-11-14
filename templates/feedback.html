@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Panel</title>
+</head>
+<body  background="{% static 'images/plane.jpg' %}">
+<center><h1 style="color: aqua">Faculty panel</h1></center>
+
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+<table align="center" border="2">
+    <tr>
+        {% if data %}
+            <th><h2>Feedback Id</h2></th>
+            <th><h2>Sundaram</h2></th>
+            <th><h2>Regina</h2></th>
+            <th><h2>kiranmai</h2></th>
+            <th><h2>Shilpa</h2></th>
+            <th><h2>College Feedback review</h2></th>
+            {% else %}
+            <h1>No feedbacks to see</h1>
+        {% endif %}
+    </tr>
+{% for x in data %}
+    <tr>
+        <th><h3>{{ x.Feedback_ID }}</h3></th>
+        <th><h3>{{ x.Sundaram }}</h3></th>
+        <th><h3>{{ x.Rejina }}</h3></th>
+        <th><h3>{{ x.Kiranmai }}</h3></th>
+        <th><h3>{{ x.Shilpa }}</h3></th>
+        <th><h3>{{ x.College_feedback_review }}</h3></th>
+    </tr>
+{% endfor %}
+
+        <tr>
+
+            <th colspan="6">
+                <h3><a href="{% url 'logoutf' %} "> LogOut</a></h3>
+            </th>
+        </tr>
+    </form>
+</table><br><br>
+<h1>FACULTY FEEDBACK COUNTS</h1>
+<table align="center"border="2"width="800">
+    <tr>
+        <th>NAME</th>
+        <th>EXCELENT</th>
+        <th>GOOD</th>
+        <th>NEED TO IMPROVE</th>
+    </tr>
+    <tr>
+        <th>SUNDARAM</th>
+        <th>{{ c1 }}</th>
+        <th>{{ c2 }}</th>
+        <th>{{ c3 }}</th>
+    </tr>
+    <tr>
+        <th>KIRANMAI</th>
+        <th>{{ kc1 }}</th>
+        <th>{{ kc2 }}</th>
+        <th>{{ kc3 }}</th>
+    </tr>
+    <tr>
+        <th>REGINA</th>
+        <th>{{ rc1 }}</th>
+        <th>{{ rc2 }}</th>
+        <th>{{ rc3 }}</th>
+    </tr>
+    <tr>
+        <th>SHILPA</th>
+        <th>{{ sc1 }}</th>
+        <th>{{ sc2 }}</th>
+        <th>{{ sc3 }}</th>
+    </tr>
+    <tr><th colspan="4"><a href="{% url 'dc' %}"><h2>Download Faculty Feedback counts</h2></a></th></tr>
+</table>
+<br><br>
+</body>
+</html>
+

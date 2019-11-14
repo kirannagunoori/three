@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head><br>
+<body  background="{% static 'images/feedback_background4.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'title.html' %}
+{% include 'menu.html' %}
+<br><br>
+<form action="{% url 'loginFS' %}" method="post">
+{% csrf_token %}
+<table align="center">
+    <tr>
+        <th>
+<table align="center">
+    <tr>
+        <th colspan="2">
+            <center><font size="6" color="#ff4500" face="Arial ">
+                <img src="{% static 'images/login_image.jpg' %}" height="80" width="300"><br><br>
+            </font></center>
+        </th>
+    </tr>
+    <tr>
+        <th><font size="4" face="Arial" color="olive">Username : </font> </th>
+        <th><input type="text" required name="username" placeholder="username"></th>
+    </tr>
+    <tr>
+        <th><font size="4" face="Arial" color="olive">Password : </font></th>
+        <th><input type="password" required name="password" placeholder="Password"></th>
+    </tr>
+    <tr>
+        <th><font size="4" face="Arial" color="olive">Type : </font></th>
+        <th><select name="usertype">
+            <option>Administrator</option>
+            <option>Faculty</option>
+            <option>Student</option>
+        </select> </th>
+    </tr>
+    <tr>
+        <th colspan="2"><br>
+            <center><button type="submit" class="btn btn-success">Login</button></center>
+        </th>
+    </tr>
+</table><br>
+
+        </th>
+        <th width="50"></th>
+        <th>
+            <img src="{% static 'images/login key.jpg' %}" width="250" height="200">
+        </th>
+    </tr>
+    <tr>
+    <th>
+        {% if data %}
+            <h3> {{ data }}</h3>
+        {% endif %}
+    </th>
+    </tr>
+<tr>
+    <th>
+        {% for x in messages %}
+            <h3>{{ x }}</h3>
+        {% endfor %}
+    </th>
+</tr>
+</table>
+</form>
+<br><br>
+{#{% include 'gd_home/footer.html' %}#}
+
+</body>
+</html>
